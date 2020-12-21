@@ -3,12 +3,49 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Project1</title>
+    <title>Project1-Travellerz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='Assets/Semantic-UI-CSS/semantic.css'>
+
+
+    <script type="text/javascript" src='Assets/script.js'></script>
 </head>
 <body>
-    
+<form class="ui form">
+    <div class="ui container">
+    <div class="field">
+        <div class="two fields">
+          <div class="field" id="from">
+            <input type="text" name="travelFrom" placeholder="From">
+          </div>
+          <div class="field" id="to">
+            <input type="text" name="travelTo" placeholder="To">
+          </div>
+        </div>
+      </div>
+      </div>    
+
+<div class="ui container">
+<h3>Travel Dates</h3>
+<div class="two fields">
+<div class="field">
+    <div class="ui calendar" id="departure">
+        <div class="ui input left icon">
+        <i class="calendar icon"></i>
+        <input type="date" placeholder="Date/Time">
+        </div>
+    </div>
+</div>
+<div class="field">
+    <div class="ui calendar" id="return">
+        <div class="ui input left icon">
+        <i class="calendar icon"></i>
+        <input type="date" placeholder="Date/Time">
+        </div>
+    </div>
+</div>
+</div>
+</form>
+
 </body>
 </html>
