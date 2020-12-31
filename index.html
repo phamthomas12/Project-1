@@ -11,7 +11,16 @@
 
 </head>
 <body>
+  <!-- Cant seem to change between tabs-->
 <form class="ui form">
+  <div class="ui tabular menu">
+    <a class="item active">
+      Hotel Finder
+    </a>
+    <a class="item">
+      Currency Exchange
+    </a>
+  </div>
     <div class="ui container">
     <div class="field">
         <div class="two fields">
@@ -45,6 +54,29 @@
     </div>
 </div>
 </div>
+<!--Need Help getting the Date to Drop down-->
+<!--<div class="ui form"> -->
+  <div class="two fields">
+    <div class="field">
+      <label>Start date</label>
+      <div class="ui calendar" id="rangestart">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Start">
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>End date</label>
+      <div class="ui calendar" id="rangeend">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="End">
+        </div>
+      </div>
+    </div>
+  </div>
+<!--</div> -->
 </form>
 
 <script type="text/javascript" src='Assets/Fomantic-UI-CSS/dist/semantic.js'></script>
