@@ -41126,6 +41126,9 @@ span.ui.massive.text {
 .ui.form {
   position: relative;
   max-width: 100%;
+  padding-top: 15%;
+  padding-left: 13%;
+  padding-right: 13%;
 }
 
 /*--------------------
