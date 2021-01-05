@@ -12,79 +12,66 @@
 <body>
     <!-- The tabs have been changed but the content doesn't change-->
     <form class="ui form">
-        <!--Change the class and add data-tab-->
         <div class="ui top attached tabular menu">
-            <a class="item active" data-tab="first">
-      Hotel Finder
-    </a>
-            <a class="item" data-tab="second">
-      Currency Exchange
-    </a>
-        </div>
-        <!-- First Tab-->
-        <div class="ui bottom attached active tab segment" data-tab="first">
+            <div class="active item" data-tab="one">Currency Exchange</div>
+            <div class="item" data-tab="two">Flight Searcher</div>
+          </div>
+          <div class="ui bottom attached active tab segment" data-tab="one">
+            <p></p>
             <div class="ui container">
                 <div class="field">
                     <div class="two fields">
-                        <div class="field" id="from">
+                        <div class="field" id="origin-currency">
                             <input type="text" name="travelFrom" placeholder="From">
                         </div>
-                        <div class="field" id="to">
+                        <div class="field" id="exchange-curreny">
                             <input type="text" name="travelTo" placeholder="To">
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="ui container">
-                <h3>Travel Dates</h3>
-                <div class="two fields">
+            <p></p>
+          </div>
+          <div class="ui bottom attached tab segment" data-tab="two">
+            <p></p>
+            <div class="ui bottom attached active tab segment">
+                <div class="ui container">
                     <div class="field">
-                        <div class="ui calendar" id="departure">
-                            <div class="ui input left icon">
-                                <i class="calendar icon"></i>
-                                <input type="date" placeholder="Date/Time">
+                        <div class="two fields">
+                            <div class="field" id="travel-from">
+                                <input type="text" placeholder="From">
                             </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui calendar" id="return">
-                            <div class="ui input left icon">
-                                <i class="calendar icon"></i>
-                                <input type="date" placeholder="Date/Time">
+                            <div class="field" id="travel-to">
+                                <input type="text" placeholder="To">
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--I have change the input type to "date", so the calendar is working now-->
-                <!--<div class="ui form"> -->
-                <div class="two fields">
-                    <div class="field">
-                        <label>Start date</label>
-                        <div class="ui calendar" id="rangestart">
-                            <div class="ui input left icon">
-                                <i class="calendar icon"></i>
-                                <input type="date" placeholder="Start">
+    
+                <div class="ui container">
+                    <h3>Travel Dates</h3>
+                    <div class="two fields">
+                        <div class="field">
+                            <div class="ui calendar" id="departure-date">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="date" placeholder="Date/Time">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui calendar" id="return-date">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="date" placeholder="Date/Time">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field">
-                        <label>End date</label>
-                        <div class="ui calendar" id="rangeend">
-                            <div class="ui input left icon">
-                                <i class="calendar icon"></i>
-                                <input type="date" placeholder="End">
-                            </div>
-                        </div>
-                    </div>
+                    <button id="flight-search-btn">Search Flights</button>
                 </div>
-            </div>
-
-            <!--Second Tab: Currency Exchange-->
-            <div class="ui bottom attached tab segment" data-tab="second">
-                Second Tab : CurrencyExchange
-            </div>
-            <!--</div> -->
+            <p></p>
+          </div>
     </form>
     <div id="flight-result">
     </div>
