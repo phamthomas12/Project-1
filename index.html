@@ -14,6 +14,12 @@
             font-weight: bold;
             background-color: rgb(205, 248, 205);
         }
+        body {
+            background-image: url(Assets/Background/background.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 3px;
+        }
     </style>
 </head>
 
@@ -21,15 +27,15 @@
     <!-- The tabs have been changed but the content doesn't change-->
     <form class="ui form">
         <div class="ui top attached tabular menu">
-            <div class="active item" data-tab="one">Currency Exchange</div>
-            <div class="item" data-tab="two">Flight Searcher</div>
+            <div class="active item" data-tab="one">Flight Searcher</div>
+            <div class="item" data-tab="two">Currency Exchange</div>
         </div>
-            <div class="ui bottom attached active tab segment" data-tab="one">
+            <div class="ui bottom attached active tab segment" data-tab="two">
                 <p></p>
                 <div class="ui container">
                     <div class="field">
                         <div class=" left four fields">
-                            <div class="field" id="origin-currency"> <input type="text" placeholder="Amount"></div>
+                            <div class="field" id="origin-currency"> <input type="text" id ="amountInput" placeholder="Amount"></div>
                                 <div class="ui fluid search selection dropdown">
                                 <input type="hidden" name="currency">
                                 <i class="dropdown icon"></i>
@@ -44,7 +50,10 @@
                                         <div class="item" data-value="ca"><i class="ca flag"></i>CAD</div>
                                     </div>
                                 </div>
-                        </div>   
+                        </div> 
+                        <div class="ui container" id="exchange-ammount">
+                            <h4>Exchanged Amount:</h4>
+                        </div> 
                     </div>
                 </div>                 
             </div>
@@ -52,7 +61,7 @@
             <p></p>
         </div>
         <!-- <div class="ui bottom attached tab segment" data-tab="two"> -->
-            <div class="ui bottom attached tab segment" data-tab="two">
+            <div class="ui bottom attached tab segment" data-tab="one">
             <p></p>
             <div class="ui bottom attached active tab segment">
                 <div class="ui container">
