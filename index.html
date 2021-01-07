@@ -7,7 +7,13 @@
     <title>Project1-Travellerz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='Assets/Fomantic-UI-CSS/dist/semantic.css'>
-    <link rel='stylecheet' type='text/css' href="index.css">
+
+    <style>
+        li:hover{
+            font-weight: bold;
+            background-color: rgb(205, 248, 205);
+        }
+    </style>
 </head>
 
 <body>
@@ -43,18 +49,24 @@
             </div>
         </div>
             <p></p>
-          </div>
-          <div class="ui bottom attached tab segment" data-tab="two">
+        </div>
+        <!-- <div class="ui bottom attached tab segment" data-tab="two"> -->
+            <div class="ui bottom attached tab segment" data-tab="one">
             <p></p>
             <div class="ui bottom attached active tab segment">
                 <div class="ui container">
-                    <div class="field">
+                   <div class="field">
                         <div class="two fields">
                             <div class="field" id="travel-from">
-                                <input type="text" placeholder="From">
+                                <!-- <input type="text" placeholder="From"> -->
+                                <input autofocus type="text" placeholder="From" autocomplete="off" name="search-from" id="search-from"/>
+                                <!-- added the following lines to house the result -->
+                                <ul id="list-from"></ul> <!--this line was added-->
                             </div>
                             <div class="field" id="travel-to">
-                                <input type="text" placeholder="To">
+                                <!-- <input type="text" placeholder="To"> -->
+                                <input autofocus type="text" placeholder="To" autocomplete="off" name="search-to" id="search-to"/>
+                                <ul id="list-to"></ul> <!--this line was added-->
                             </div>
                         </div>
                     </div>
@@ -64,18 +76,22 @@
                     <h3>Travel Dates</h3>
                     <div class="two fields">
                         <div class="field">
-                            <div class="ui calendar" id="departure-date">
+                            <!-- removed id for div and transfer to input -->
+                            <!-- <div class="ui calendar" id="departure-date"> -->
+                            <div class="ui calendar">
                                 <div class="ui input left icon">
                                     <i class="calendar icon"></i>
-                                    <input type="date" placeholder="Date/Time">
+                                    <input type="date" placeholder="Date/Time" id="depart-date">
                                 </div>
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui calendar" id="return-date">
+                            <!-- removed id for div and transfer to input -->
+                            <!-- <div class="ui calendar" id="return-date"> -->
+                            <div class="ui calendar">
                                 <div class="ui input left icon">
                                     <i class="calendar icon"></i>
-                                    <input type="date" placeholder="Date/Time">
+                                    <input type="date" placeholder="Date/Time" id="return-date">
                                 </div>
                             </div>
                         </div>
@@ -95,6 +111,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src='Assets/Fomantic-UI-CSS/dist/semantic.js'></script>
+    <!-- I added airport database -->
+    <script type="text/javascript" src='Assets/airport_database.js'></script>
     <script type="text/javascript" src='Assets/travel.js'></script>
 </body>
 <script>
