@@ -7,6 +7,7 @@
     <title>Project1-Travellerz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='Assets/Fomantic-UI-CSS/dist/semantic.css'>
+    <link rel='stylecheet' type='text/css' href="index.css">
 </head>
 
 <body>
@@ -15,21 +16,32 @@
         <div class="ui top attached tabular menu">
             <div class="active item" data-tab="one">Currency Exchange</div>
             <div class="item" data-tab="two">Flight Searcher</div>
-          </div>
-          <div class="ui bottom attached active tab segment" data-tab="one">
-            <p></p>
-            <div class="ui container">
-                <div class="field">
-                    <div class="two fields">
-                        <div class="field" id="origin-currency">
-                            <input type="text" name="travelFrom" placeholder="From">
-                        </div>
-                        <div class="field" id="exchange-curreny">
-                            <input type="text" name="travelTo" placeholder="To">
-                        </div>
+        </div>
+            <div class="ui bottom attached active tab segment" data-tab="one">
+                <p></p>
+                <div class="ui container">
+                    <div class="field">
+                        <div class=" left four fields">
+                            <div class="field" id="origin-currency"> <input type="text" placeholder="Amount"></div>
+                                <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="currency">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select currency</div>
+                                    <div class="menu">
+                                        <div class="item" data-value="au"><i class="au flag"></i>AUD</div>
+                                        <div class="item" data-value="gb"><i class="gb flag"></i>GBP</div>
+                                        <div class="item" data-value="us"><i class="us flag"></i>USD</div>
+                                        <div class="item" data-value="cn"><i class="cn flag"></i>CNY</div>
+                                        <div class="item" data-value="jp"><i class="jp flag"></i>JPY</div>
+                                        <div class="item" data-value="nz"><i class="nz flag"></i>NZD</div>
+                                        <div class="item" data-value="ca"><i class="ca flag"></i>CAD</div>
+                                    </div>
+                                </div>
+                        </div>   
                     </div>
-                </div>
+                </div>                 
             </div>
+        </div>
             <p></p>
           </div>
           <div class="ui bottom attached tab segment" data-tab="two">
@@ -72,6 +84,10 @@
                 </div>
             <p></p>
           </div>
+          <div class="ui container" id="flight-result">
+              <h4>Flight Result:</h4>
+          </div>
+
     </form>
     <!--I have added extra jquery link to get the tab working-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
@@ -79,5 +95,7 @@
     <script type="text/javascript" src='Assets/Fomantic-UI-CSS/dist/semantic.js'></script>
     <script type="text/javascript" src='Assets/travel.js'></script>
 </body>
-
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
 </html>
