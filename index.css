@@ -34,5 +34,6 @@ select#dropdownImage option[value="0"] {background-image:url('Assets/Currency/US
 	position: absolute;
 	margin: 0;
 	padding: 0; }
-    .container div #nav li:hover li {
+.container div #nav li:hover li {
 	float: none; }
+
