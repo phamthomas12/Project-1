@@ -77716,4 +77716,12 @@ var xArr = [
   return airPortCode;
   
   }
+
+  function airPortName(iataCode) {
+    for (var i = 0; i < xArr.length; i++){
+        if (iataCode == xArr[i].code){
+          return xArr[i].name;
+        }
+    }
+  }
   
