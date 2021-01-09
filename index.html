@@ -10,28 +10,35 @@
     <link rel='stylecheet' type='text/css' href="index.css">
 
     <style>
-        li:hover{
+        li:hover {
             font-weight: bold;
             background-color: rgb(205, 248, 205);
         }
+        
         body {
             background-image: url(Assets/Background/background.jpg);
             background-repeat: no-repeat;
             background-position: center;
             margin: 3px;
         }
+        
         .flight-name {
-	        font-size: 16px;
-	        font-weight: bold;
+            font-size: 16px;
+            font-weight: bold;
             margin-bottom: 2px;
             margin-top: 6px;
         }
-        .depart-date, .arrive-date, .airport-depart {
+        
+        .depart-date,
+        .arrive-date,
+        .airport-depart {
             margin-bottom: 3px;
         }
-        .airport-arrive{
+        
+        .airport-arrive {
             margin-bottom: 6px;
         }
+        
         .segment-div {
             margin: 1px grey solid;
             background-color: rgb(196, 233, 187);
@@ -50,58 +57,66 @@
             <div class="active item" data-tab="one">Flight Searcher</div>
             <div class="item" data-tab="two">Currency Exchange</div>
         </div>
-            <div class="ui bottom attached active tab segment" data-tab="two">
-                <p></p>
-                <div class="ui container">
-                    <div class="field">
-                        <div class=" left four fields">
-                            <div class="field" id="origin-currency"> <input type="text" id ="amountInput" placeholder="Amount"></div>
-                                <div class="ui fluid search selection dropdown">
-                                <input type="hidden" name="currency">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Select currency</div>
-                                    <div class="menu">
-                                        <div class="item" data-value="au"><i class="au flag"></i>AUD</div>
-                                        <div class="item" data-value="gb"><i class="gb flag"></i>GBP</div>
-                                        <div class="item" data-value="us"><i class="us flag"></i>USD</div>
-                                        <div class="item" data-value="cn"><i class="cn flag"></i>CNY</div>
-                                        <div class="item" data-value="jp"><i class="jp flag"></i>JPY</div>
-                                        <div class="item" data-value="nz"><i class="nz flag"></i>NZD</div>
-                                        <div class="item" data-value="ca"><i class="ca flag"></i>CAD</div>
-                                    </div>
-                                </div>
-                        </div> 
-                        <div class="ui container" id="exchange-ammount">
-                            <h4>Exchanged Amount:</h4>
-                        </div> 
+        <div class="ui bottom attached active tab segment" data-tab="two">
+            <p></p>
+            <div class="ui container">
+                <div class="field">
+                    <div class=" left four fields">
+                        <div class="field">
+                            <div class="ui labeled input">
+                                <label for="amount" class="ui label">$</label>
+                                <input type="text" placeholder="Amount" id="origin-currency">
+                                <div class="ui basic label">AUD</div>
+                            </div>
+                        </div>
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden" name="currency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Select currency</div>
+                            <div class="menu" id="list-currency">
+                                <div class="item" data-value="au"><i class="au flag"></i>AUD</div>
+                                <div class="item" data-value="gb"><i class="gb flag"></i>GBP</div>
+                                <div class="item" data-value="us"><i class="us flag"></i>USD</div>
+                                <div class="item" data-value="cn"><i class="cn flag"></i>CNY</div>
+                                <div class="item" data-value="jp"><i class="jp flag"></i>JPY</div>
+                                <div class="item" data-value="nz"><i class="nz flag"></i>NZD</div>
+                                <div class="item" data-value="ca"><i class="ca flag"></i>CAD</div>
+                            </div>
+                        </div>
                     </div>
-                </div>                 
+                    <button class="ui primary button" id="currency-convert">Convert</button>
+                    <div class="ui segment" id="currency-result"></div>
+                </div>
             </div>
         </div>
-            <p></p>
+        </div>
+        </div>
+        <p></p>
         </div>
         <!-- <div class="ui bottom attached tab segment" data-tab="two"> -->
-            <div class="ui bottom attached tab segment" data-tab="one">
+        <div class="ui bottom attached tab segment" data-tab="one">
             <p></p>
             <div class="ui bottom attached active tab segment">
                 <div class="ui container">
-                   <div class="field">
+                    <div class="field">
                         <div class="two fields">
                             <div class="field" id="travel-from">
                                 <!-- <input type="text" placeholder="From"> -->
-                                <input autofocus type="text" placeholder="From" autocomplete="off" name="search-from" id="search-from"/>
+                                <input autofocus type="text" placeholder="From" autocomplete="off" name="search-from" id="search-from" />
                                 <!-- added the following lines to house the result -->
-                                <ul id="list-from"></ul> <!--this line was added-->
+                                <ul id="list-from"></ul>
+                                <!--this line was added-->
                             </div>
                             <div class="field" id="travel-to">
                                 <!-- <input type="text" placeholder="To"> -->
-                                <input autofocus type="text" placeholder="To" autocomplete="off" name="search-to" id="search-to"/>
-                                <ul id="list-to"></ul> <!--this line was added-->
+                                <input autofocus type="text" placeholder="To" autocomplete="off" name="search-to" id="search-to" />
+                                <ul id="list-to"></ul>
+                                <!--this line was added-->
                             </div>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="ui container">
                     <h3>Travel Dates</h3>
                     <div class="two fields">
@@ -128,11 +143,11 @@
                     </div>
                     <button id="flight-search-btn">Search Flights</button>
                 </div>
-            <p></p>
-          </div>
-          <div class="ui container" id="flight-result">
-              <h4>Flight Result:</h4>
-          </div>
+                <p></p>
+            </div>
+            <div class="ui container" id="flight-result">
+                <h4>Flight Result:</h4>
+            </div>
 
     </form>
     <!-- <div id="flight-result">
@@ -144,8 +159,10 @@
     <!-- I added airport database -->
     <script type="text/javascript" src='Assets/airport_database.js'></script>
     <script type="text/javascript" src='Assets/travel.js'></script>
+    <script type="text/javascript" src='Assets/currency.js'></script>
 </body>
 <script>
     $('.ui.dropdown').dropdown();
 </script>
+
 </html>
