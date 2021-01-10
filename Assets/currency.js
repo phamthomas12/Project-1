@@ -27,3 +27,10 @@ $("#currency-convert").on("click", function(event) {
     event.preventDefault();
     exchangeCurrency();
 })
+
+//clear button
+$("#currency-clear").on("click", function(event) {
+    event.preventDefault();
+    $("#origin-currency").val("");
+    $("#currency-result").text("");
+})

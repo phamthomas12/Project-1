@@ -1,17 +1,17 @@
+$('.menu .item')
+    .tab();
 
- $('.menu .item')
-    .tab(); 
-
+$('.ui.dropdown').dropdown();
 
 function getFlightOffer(amadeusAccessToken) {
-    var origCity = $("#search-from").val().slice(0,3);
-    var destCity = $("#search-to").val().slice(0,3);
+    var origCity = $("#search-from").val().slice(0, 3);
+    var destCity = $("#search-to").val().slice(0, 3);
     var depDate = $("#depart-date").val();
     var retDate = $("#return-date").val();
 
     $.ajax({
         type: "get",
-        url: "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" + origCity +"&destinationLocationCode=" + destCity + "&departureDate=" + depDate + "&returnDate=" + retDate + "&adults=1&nonStop=false&currencyCode=AUD&max=10",
+        url: "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" + origCity + "&destinationLocationCode=" + destCity + "&departureDate=" + depDate + "&returnDate=" + retDate + "&adults=1&nonStop=false&currencyCode=AUD&max=10",
         dataType: 'json',
         async: true,
         beforeSend: function(xhr) {
@@ -56,15 +56,14 @@ function renderResult(response) {
     var airlineCodes = response.dictionaries.carriers;
     var dataAllFlight = response.data;
     var dataFlight = [];
-    if (dataAllFlight.length >=5){
-        dataFlight = dataAllFlight.slice(0,5);
-    }
-    else {
+    if (dataAllFlight.length >= 5) {
+        dataFlight = dataAllFlight.slice(0, 5);
+    } else {
         dataFlight = dataAllFlight;
     }
-    dataFlight.forEach(function(data){
-        data.itineraries.forEach(function(itineraries){
-            itineraries.segments.forEach(function(segments){
+    dataFlight.forEach(function(data) {
+        data.itineraries.forEach(function(itineraries) {
+            itineraries.segments.forEach(function(segments) {
                 var newSegmentDiv = $("<div>").addClass("segment-div")
                 var airlineName = $("<p>").addClass("flight-name");
                 airlineName.text(airlineCodes[segments.carrierCode] + ", " + segments.carrierCode + segments.number);
@@ -75,18 +74,17 @@ function renderResult(response) {
                 var terminalDepartText;
                 if (segments.departure.hasOwnProperty('terminal')) {
                     terminalDepartText = " Terminal " + segments.departure.terminal;
-                }
-                else {
+                } else {
                     terminalDepartText = "";
                 }
 
 
                 newAirportDepartP.text(airPortDepart + terminalDepartText).addClass("airport-depart");
-                
+
                 var tDepartSegment = new Date(segments.departure.at);
-                var options = { weekday: 'long'};
+                var options = { weekday: 'long' };
                 var dayOfWeek = new Intl.DateTimeFormat('en-US', options).format(tDepartSegment);
-                var monthOfYear = tDepartSegment.toLocaleString('default', {month: 'long'});
+                var monthOfYear = tDepartSegment.toLocaleString('default', { month: 'long' });
                 var newDepartP = $("<p>").addClass("depart-date");
                 newDepartP.text(zeroTrunc(tDepartSegment.getHours()) + ":" + zeroTrunc(tDepartSegment.getMinutes()) + " " + dayOfWeek + " " + tDepartSegment.getDate() + " " + monthOfYear);
 
@@ -97,17 +95,16 @@ function renderResult(response) {
                 var terminalArriveText;
                 if (segments.arrival.hasOwnProperty('terminal')) {
                     terminalArriveText = " Terminal " + segments.arrival.terminal;
-                }
-                else {
+                } else {
                     terminalArriveText = "";
                 }
 
                 newAirportArriveP.text(airPortArrive + terminalArriveText).addClass("airport-arrive");
 
                 var tArriveSegment = new Date(segments.arrival.at);
-                var options = { weekday: 'long'};
+                var options = { weekday: 'long' };
                 var dayOfWeek = new Intl.DateTimeFormat('en-US', options).format(tArriveSegment);
-                var monthOfYear = tArriveSegment.toLocaleString('default', {month: 'long'});
+                var monthOfYear = tArriveSegment.toLocaleString('default', { month: 'long' });
                 var newArriveP = $("<p>").addClass("arrive-date");
                 newArriveP.text(zeroTrunc(tArriveSegment.getHours()) + ":" + zeroTrunc(tArriveSegment.getMinutes()) + " " + dayOfWeek + " " + tArriveSegment.getDate() + " " + monthOfYear);
 
@@ -131,12 +128,11 @@ function renderResult(response) {
 }
 
 //function to truncate zero for hours and minutes less than 10
-function zeroTrunc (num) {
-	if (num < 10) {
-		return ('0' + num);
-    }
-else {
-	return num;
+function zeroTrunc(num) {
+    if (num < 10) {
+        return ('0' + num);
+    } else {
+        return num;
     }
 }
 
@@ -149,7 +145,7 @@ function setListFrom(airPorts) {
         $("#list-from").append(newLi);
 
     }
-    if (airPorts.length == 0){
+    if (airPorts.length == 0) {
         setNoResultsFrom();
         $("#flight-search-btn").attr("disabled", "true");
     }
@@ -164,7 +160,7 @@ function setListTo(airPorts) {
         $("#list-to").append(newLi);
 
     }
-    if (airPorts.length == 0){
+    if (airPorts.length == 0) {
         setNoResultsTo();
         $("#flight-search-btn").attr("disabled", "true");
     }
@@ -184,50 +180,48 @@ function setNoResultsTo() {
     $("#list-to").append(newLi);
 }
 
-$("#search-from").on("input",function(event){
+$("#search-from").on("input", function(event) {
     console.log("Handler for From input was fired");
     $("#flight-search-btn").attr("disabled", false);
     var valueFrom = event.target.value;
-    if (valueFrom && valueFrom.trim().length > 0){
+    if (valueFrom && valueFrom.trim().length > 0) {
         var x = xTract(valueFrom);
         setListFrom(x);
-    }
-    else {
+    } else {
         $("#list-from").empty();
     }
 })
-    
-$("#search-to").on("input", function(event){
+
+$("#search-to").on("input", function(event) {
     console.log("Handler for To input was fired");
     $("#flight-search-btn").attr("disabled", false);
     var valueTo = event.target.value;
-    if (valueTo && valueTo.trim().length > 0){
+    if (valueTo && valueTo.trim().length > 0) {
         var x = xTract(valueTo);
         setListTo(x);
-    }
-    else {
+    } else {
         $("#list-to").empty();
     }
 })
 
-$("#list-from").on("click",".list-filter-from", function(event){
+$("#list-from").on("click", ".list-filter-from", function(event) {
     //console.log("this event was triggered.");
     $("#search-from").val($(this).text());
     $("#list-from").empty();
 })
 
-$("#list-to").on("click",".list-filter-to", function(event){
+$("#list-to").on("click", ".list-filter-to", function(event) {
     //console.log("this event was triggered.");
     $("#search-to").val($(this).text());
     $("#list-to").empty();
 })
 
-$("#depart-date").on("change", function(){
+$("#depart-date").on("change", function() {
     //console.log("Depart Date event was triggered");
     //console.log($(this).val());
 })
 
-$("#return-date").on("change", function(){
+$("#return-date").on("change", function() {
     //console.log("Return Date event was triggered");
     //console.log($(this).val());
 })
@@ -235,7 +229,7 @@ $("#return-date").on("change", function(){
 
 //search flight event trigger
 
-$("#flight-search-btn").on("click", function(event){
+$("#flight-search-btn").on("click", function(event) {
     event.preventDefault();
     getToken();
 })
@@ -244,6 +238,3 @@ $("#flight-search-btn").on("click", function(event){
 //initialize part of the logic
 
 $("#flight-search-btn").attr("disabled", "true");
-
-
-
