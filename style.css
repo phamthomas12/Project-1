@@ -1,91 +1,134 @@
 /* select#dropdownImage option[value="1"] {background-image:url('Assets/Currency/USD.png');}
 select#dropdownImage option[value="0"] {background-image:url('Assets/Currency/USD.png');} */
 
-    .container div #navbar {
-	width: 900px;
-	margin-top: -34px;
-	margin-left: 149px;
+.container div #navbar {
+    width: 900px;
+    margin-top: -34px;
+    margin-left: 149px;
 }
 
-    .container div #nav {
-	width: 100%;
-	padding: 0px;
-	height: 1em; }
-    .container #nav li {
-        position: relative;
-        list-style: none;
-        padding: 0px;
-	 }
-     .container div #nav li a {
-        display: none; 
-        background: #db7872;
-        width: 10em; /* Width to help Opera out */
-        top: 0;
-        left: 100%;
- }
- .container div #nav li ul {
-	display: block;
-	position: absolute;
-	margin: 0;
-	padding: 0;
+.container div #nav {
+    width: 100%;
+    padding: 0px;
+    height: 1em;
 }
+
+.container #nav li {
+    position: relative;
+    list-style: none;
+    padding: 0px;
+}
+
+.container div #nav li a {
+    display: none;
+    background: #db7872;
+    width: 10em;
+    /* Width to help Opera out */
+    top: 0;
+    left: 100%;
+}
+
+.container div #nav li ul {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
 .container div #nav li:hover ul {
-	display: block;
-	position: absolute;
-	margin: 0;
-	padding: 0; }
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
 .container div #nav li:hover li {
-	float: none; }
+    float: none;
+}
+
+li:hover {
+    font-weight: bold;
+    background-color: rgb(205, 248, 205);
+}
+
+body {
+    background-image: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(85, 154, 233, 0.842)), url(Assets/Background/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 3px;
+}
 
 
-	li:hover {
-		font-weight: bold;
-		background-color: rgb(205, 248, 205);
-	}
-	
-	body {
-		background-image: url(Assets/Background/background.jpg);
-		background-repeat: no-repeat;
-		background-position: center;
-		margin: 3px;
-	}
-	
-	.flight-name {
-		font-size: 16px;
-		font-weight: bold;
-		margin-bottom: 2px;
-		margin-top: 6px;
-	}
-	
-	.depart-date,
-	.arrive-date,
-	.airport-depart {
-		margin-bottom: 3px;
-	}
-	
-	.airport-arrive {
-		margin-bottom: 6px;
-	}
-	
-	.segment-div {
-		margin: 1px grey solid;
-		background-color: rgb(196, 233, 187);
-		margin-bottom: 8px;
-		margin-top: 10px;
-	}
-	hr {
-		border: 5px solid blue;
-	}
-	.total-cost {
-		font-size: 18px;
-		font-weight: bold;
-		background-color: cyan;
-		margin-top: 12px;
-	}
-	.flight-time {
-		display: inline;
-		background-color: rgb(195, 223, 141);
-		font-weight: bold;
-		margin-bottom: 10px;
-	}
+/* Css for header Title */
 
+#travellerz {
+    font-family: 'Lobster', cursive;
+    font-size: 100px;
+    text-align: center;
+    color: rgb(47, 98, 139);
+}
+
+.res-form {
+    margin-top: 5px;
+    padding-bottom: 50px;
+}
+
+.ui.form {
+    padding-top: 5%;
+}
+
+
+/* CSS for placeholder in div */
+
+[contentEditable=true]:empty:not(:focus):before {
+    content: attr(data-text)
+}
+
+.flight-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    margin-top: 6px;
+}
+
+.depart-date,
+.arrive-date,
+.airport-depart {
+    margin-bottom: 3px;
+}
+
+.airport-arrive {
+    margin-bottom: 6px;
+}
+
+.segment-div {
+    margin: 1px grey solid;
+    background-color: rgb(196, 233, 187);
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+hr {
+    border: 5px solid blue;
+}
+
+.total-cost {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: cyan;
+    margin-top: 12px;
+}
+
+.flight-time {
+    display: inline;
+    background-color: rgb(195, 223, 141);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    #travellerz {
+        font-size: 50px;
+    }
+}
