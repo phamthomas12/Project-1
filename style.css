@@ -37,3 +37,55 @@ select#dropdownImage option[value="0"] {background-image:url('Assets/Currency/US
 .container div #nav li:hover li {
 	float: none; }
 
+
+	li:hover {
+		font-weight: bold;
+		background-color: rgb(205, 248, 205);
+	}
+	
+	body {
+		background-image: url(Assets/Background/background.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		margin: 3px;
+	}
+	
+	.flight-name {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 2px;
+		margin-top: 6px;
+	}
+	
+	.depart-date,
+	.arrive-date,
+	.airport-depart {
+		margin-bottom: 3px;
+	}
+	
+	.airport-arrive {
+		margin-bottom: 6px;
+	}
+	
+	.segment-div {
+		margin: 1px grey solid;
+		background-color: rgb(196, 233, 187);
+		margin-bottom: 8px;
+		margin-top: 10px;
+	}
+	hr {
+		border: 5px solid blue;
+	}
+	.total-cost {
+		font-size: 18px;
+		font-weight: bold;
+		background-color: cyan;
+		margin-top: 12px;
+	}
+	.flight-time {
+		display: inline;
+		background-color: rgb(195, 223, 141);
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
