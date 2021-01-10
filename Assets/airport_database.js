@@ -77707,11 +77707,16 @@ var xArr = [
   var airPortCode = [];
   var y = str.toLowerCase();
   for (var i = 0; i < xArr.length; i++) { //added some filters to facilitate search
-              if ((xArr[i].city.toLowerCase().includes(y) || xArr[i].tz.toLowerCase().includes(y) || xArr[i].code.toLowerCase().includes(y) ||
+              if ((xArr[i].code.toLowerCase() == y) && (xArr[i].type == "Airports")) {
+              airPortCode = [];
+              airPortCode.push(xArr[i].code + ": " + xArr[i].name);
+              break;
+    }
+              else if ((xArr[i].code.toLowerCase().includes(y) || xArr[i].city.toLowerCase().includes(y) || xArr[i].tz.toLowerCase().includes(y) ||
                xArr[i].state == str || xArr[i].name.toLowerCase().includes(y) || xArr[i].country.toLowerCase().includes(y)) && xArr[i].type == "Airports")  {
               airPortCode.push(xArr[i].code + ": " + xArr[i].name);
+              }
               
-          }
       }
   return airPortCode;
   
