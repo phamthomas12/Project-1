@@ -7,24 +7,18 @@ This is a multifunctional application that will help you organize your trip. Thi
 
 ## User Story
 
-```
 As a traveler, I want to be able to view the currency exchange rates and search flights for my desired destinations 
 
-```
 ## Project Descriptions
 
-```
 This travel planner dashboard will have a form input with two tabs for Flight search and Currency Exchange.
 
 In Flight Search Tabs, when I search for an origin place and destination place, I am presented with an auto-complete form with a recommended list of airports name that related to the string that I type in the input box. 
-The Search Flight button will be disabled until I fill out all the informations: origin place, destination places, From date, To date.
 
 When I click the Search Flight Button, the flight result view page will appear with the flight itineraries that include airport name, time and date, origin and destination places, duration and total price.
 
 In Currency Exchange Tabs, the base currency will be set as default in AUD. I can select a list of some popular currencies from the dropdown list. When I type the amount, I can only type in number, not text. 
 When I click the converted button, the converted amount will appeare in the text box below. If I want to clear the input and result, I can click the clear button.
-
-```
 
 ## Technology
 Fomantic UI
@@ -39,7 +33,7 @@ Currency Exchange: http://exchangeratesapi.io/
 ## The following image demonstrates the application functionality:
 
 Overview Main Page
-![main page](Assets\Screenshots\main-page.PNG)
+![main-page](Assets\Screenshots\main-page.PNG)
 
 Airport List when type flight input
 ![airport list](Assets\Screenshots\airport-list.png)
