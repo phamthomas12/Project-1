@@ -33,22 +33,22 @@ Currency Exchange: http://exchangeratesapi.io/
 ## The following image demonstrates the application functionality:
 
 Overview Main Page
-![main-page](.Assets\Screenshots\main-page.PNG)
+![main-page](./Assets/Screenshots/main-page.PNG)
 
 Airport List when type flight input
-![airport list](.Assets\Screenshots\airport-list.png)
+![airport list](./Assets/Screenshots/airport-list.png)
 
 Flight result view page
-![flight result](.Assets\Screenshots\flight-result.PNG)
+![flight result](./Assets/Screenshots/flight-result.PNG)
 
 Currency tab
-![currency page](.Assets\Screenshots\currency-page.png)
+![currency page](./Assets/Screenshots/currency-page.png)
 
 Currency Result
-![currency reult](.Assets\Screenshots\currency-result.PNG)
+![currency reult](./Assets/Screenshots/currency-result.PNG)
 
 Responsive 
-![responsive](.Assets\Screenshots\responsive.PNG)
+![responsive](./Assets/Screenshots/responsive.PNG)
 
 ## Links to the working application and GitHub repo:
 * The URL of the deployed application.
