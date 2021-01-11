@@ -32,30 +32,43 @@ Currency Exchange: http://exchangeratesapi.io/
 
 ## The following image demonstrates the application functionality:
 
-Overview Main Page
+### Overview Main Page
+
 ![main-page](./Assets/Screenshots/main-page.PNG)
 
-Airport List when type flight input
+
+
+### Airport List when type flight input
 ![airport list](./Assets/Screenshots/airport-list.png)
 
-Flight result view page
+
+
+### Flight result view page
 ![flight result](./Assets/Screenshots/flight-result.PNG)
 
-Currency tab
+
+### Currency tab
 ![currency page](./Assets/Screenshots/currency-page.png)
 
-Currency Result
+
+
+### Currency Result
 ![currency reult](./Assets/Screenshots/currency-result.PNG)
 
-Responsive 
+
+
+### Responsive 
 ![responsive](./Assets/Screenshots/responsive.PNG)
 
 ## Links to the working application and GitHub repo:
+
 * The URL of the deployed application.
 https://phamthomas12.github.io/Project-1/
 
+
 * The URL of the GitHub repository.
 https://github.com/phamthomas12/Project-1.git
+
 
 - - -
 © 2021 Travellerz Group. All Rights Reserved.
